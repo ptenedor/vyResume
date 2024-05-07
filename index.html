@@ -1,0 +1,154 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="dawncss.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+        <link rel="stylesheet"  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <script src="https://kit.fontawesome.com/1367490ff9.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+        <link rel="stylesheet"  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <title>Home</title>
+    </head>
+    <body> 
+        <header>
+            <a href="#" class="logo"><i class="ri-home-heart-fill"></i><span>Origami</span></a>
+
+            <ul class="nav">
+                <li><a href="index.html" class="Active">Home</a></li>
+                <li><a href="past.html">History</a></li>
+                <li><a href="uses.html">Uses</a></li>
+                <li><a href="reference.html">Citation</a></li>
+            </ul>
+
+            <ul class="main-menu">
+                <li class='login'><a href="#"><i class="ri-account-pin-circle-fill"></i> Login</a></li>
+            </ul>
+
+            <div class="signin">
+                <!-- <a href="#" class="Acc"><i class="ri-account-pin-circle-fill"></i>Sign In</a> -->
+                <a href="#">Register</a>
+                <div class="bx bx-menu" id="menu-icon"></div>
+            </div>
+        </header>
+        <div class="content">
+            <h1 class="toptxt">Origami and the Many Uses</h1>
+            <p>
+                How has an artform evolved into modern technology
+            </p>
+            <div class="layout">
+                <a href="past.html"><button type="button"><span></span>ORIGAMIS RICH PAST</button></a>
+                <a href="uses.html"><button type="button"><span></span>RECENT USES</button></a>
+            </div>
+        </div>
+        
+        
+
+        <section class="page1">
+            <div class="p1Container reveal">
+                <h2>Contents of this website</h2>
+                <div class="cards">
+                    <div class="texts-cards">
+                        <h3>The origins</h3>
+                        <p>
+                            The original and intended use of performing the art.
+                        </p>
+                    </div>
+                    <div class="texts-cards">
+                        <h3>The evolution</h3>
+                        <p>
+                            How is it being used today in unexected fields
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="login-popup" role="alert">
+            <div class="login-popup-container">
+                <div class="login-box">
+                    <h2>Login</h2>
+                    <form >">
+                        <div class="user-box">
+                        <input type="text" name="username" required>
+                        <label>Username</label>
+                        </div>
+                        <div class="user-box">
+                        <input type="password" name="pword" required>
+                        <label>Password</label>
+                        </div>
+                        <a href="#">
+                        <input type='submit'>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                         </input>
+                        </a>
+                        <a href="register.php">
+                          No account? Register
+                        <a>
+
+                    </form>
+                    <?php
+                    if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+                      echo $error;
+                    }
+                      
+                    ?>
+                </div>
+                <a href="#0" class="login-popup-close img-replace"></a>
+            </div> <!-- cd-popup-container -->
+        </div> <!-- cd-popup -->
+        
+
+        <script src="dawn.js"></script>
+        <script type="text/javascript">
+            window.addEventListener('scroll', reveal);
+
+            function reveal(){
+                var reveals = document.querySelectorAll('.reveal');
+
+                for(var i = 0; i < reveals.length; i++) {
+                    var windowheight = window.innerHeight;
+                    var revealtop = reveals[i].getBoundingClientRect().top;
+                    var revealpoint = 150;
+
+                    if(revealtop < windowheight - revealpoint) {
+                        reveals[i].classList.add('active');
+                    }
+
+                    else {
+                        reveals[i].classList.remove('active');
+                    }
+                }
+            }
+
+        </script>
+
+<script>//a basic easy popup
+    jQuery(document).ready(function($){
+            //open popup
+            $('.login').on('click', function(event){
+                event.preventDefault();
+                $('.login-popup').addClass('is-visible');
+            });
+            
+            //close popup
+            $('.login-popup').on('click', function(event){
+                if( $(event.target).is('.login-popup-close') || $(event.target).is('.login-popup') ) {
+                    event.preventDefault();
+                    $(this).removeClass('is-visible');
+                }
+            });
+            });
+    </script>
+    </body>
+</html>
